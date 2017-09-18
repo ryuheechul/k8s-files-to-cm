@@ -1,19 +1,12 @@
 #!/bin/bash
 
-path=$1
-
-file_list=`cd $path && find . -type f`
+name=$1
+path=$2
 
 BASEDIR=$(dirname $0)
 
-echo "apiVersion: v1"
-echo "data:"
+$BASEDIR/generate-configmap.sh $name $path > .output/$name-configmap.yaml
+$BASEDIR/generate-volumes.sh $name $path > .output/$name-volumes.yaml
 
-while IFS='\n' read -r line || [[ -n "$line" ]]; do
-    fn="${line:2:${#line}-1}"
-    $BASEDIR/print.sh $path $fn
-done <<< "$file_list "
-
-echo "metadata:"
-echo "  name:"
-echo "  namespace:"
+echo "# check the result by"
+echo "ls .output"

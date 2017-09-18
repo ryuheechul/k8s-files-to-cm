@@ -8,8 +8,7 @@
 
 ## Convert
 
-### Simple way
-`$ bin/convert.sh a/folder/contains/confs`
-
-### To a file
-`$ bin/convert.sh a/folder/contains/confs > your-configmap.yaml`
+```
+$ export config_name=my-config
+$ bin/convert.sh $config_name a/folder/contains/confs
+```

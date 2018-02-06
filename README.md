@@ -2,6 +2,9 @@
 
 > convert files under a directory to k8s configmap easily.
 
+## Notice
+This project was reborn as [galley](https://github.com/rainist/galley) since it's much easier to use and more useful as GUI
+
 ## Motivations
 - Wanted to attach volumes that contains configurations file to a container.
 - It's a huge labor to do it manually.
